@@ -1,0 +1,19 @@
+localhost {
+	encode zstd gzip
+	templates
+	file_server browse
+}
+
+:8080 {
+	respond "I am 8080"
+}
+
+:8081 {
+	respond "I am 8081"
+}
+
+:80 {
+        encode zstd gzip
+        templates
+        file_server browse
+}
