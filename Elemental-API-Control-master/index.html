@@ -1,0 +1,417 @@
+<html>
+<head>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+<script type="text/javascript" src="videoFrame.app.min.js"></script>
+<script type="text/javascript" src="app.dependencies.js"></script>
+
+<!-- CSS -->    
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+<title>RTE Video Monitoring</title>
+
+  <meta charset="UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.dashjs.org/latest/dash.all.min.js"></script>
+  <script src="VideoFrame.min.js"></script>
+
+<style>
+    body { color: white; background-color: grey; font-family: 'Poppins', sans-serif; margin-top: 0px;
+    margin-bottom: 1px;
+    margin-right: 1px;
+    margin-left: 15px;}
+    video { width: 240px; height: 160px; margin-top: 1px; margin-bottom: 1px; margin-right: 1px;           margin-left: 1px;}
+    #statex { color: white; background-color: green; margin-top: 2px; }
+    .btn  { color: black; }
+    .rounded { -moz-border-radius:10px 10px 10px 10px; border-radius:10px 10px 10px 10px;}
+    #videospan {style="position: absolute; top:15; left: 1100; display: block; background-color: #303030; padding: 5px;"}
+</style>
+    
+</head>
+
+<body onload="startup()" >
+<hr>
+<div><span><img src="ElementalConductorLive247Logo.png"></span>
+       <span id="videospan" name="videospan" class="rounded" style="position: absolute; top:30; left: 1100; display: block; background-color: #606060; padding: 2px;">
+       <video id="videoPlayer" name="videoPlayer" controls="false" ;
+>
+       </video>
+       <p style="position: absolute; top:144; left: 90; display: block; color: greenyellow;" id="playertime" name="playertime">00:00:00.00</p>
+       </span>
+</div>
+
+<br>
+<h1 id="connected" name="connected">API Controller</h1>
+          
+<br><br><hr>
+    
+<div id="description" class="description">
+    <p>
+      <div class="dropdown show">
+      
+      <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">RTE One</a>
+
+       <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+         <a class="dropdown-item" id="vc1.xml" href="#" onclick='select(this)'>RTE One</a>
+         <a class="dropdown-item" id="vc1.xml" href="#" onclick='select(this)'>RTE Two</a>
+         <a class="dropdown-item" id="vc1.xml" href="#" onclick='select(this)'>RTE News</a>
+         <a class="dropdown-item" id="vc1.xml" href="#" onclick='select(this)'>RTEJr</a>
+         <a class="dropdown-item" id="vc1.xml" href="#" onclick='select(this)'>Virtual Channel 01</a>
+         <a class="dropdown-item" id="vc1.xml" href="#" onclick='select(this)'>Virtual Channel 02</a>
+         <a class="dropdown-item" id="vc1.xml" href="#" onclick='select(this)'>Virtual Channel 03</a>
+         <a class="dropdown-item" id="vc1.xml" href="#" onclick='select(this)'>Virtual Channel 04</a>
+         <a class="dropdown-item" id="vc1.xml" href="#" onclick='select(this)'>Virtual Channel 05</a>
+         <a class="dropdown-item" id="vc1.xml" href="#" onclick='select(this)'>Virtual Channel 06</a>
+         <a class="dropdown-item" id="vc1.xml" href="#" onclick='select(this)'>Virtual Channel 07</a>
+         <a class="dropdown-item" id="vc1.xml" href="#" onclick='select(this)'>Virtual Channel 08</a>
+         <a class="dropdown-item" id="vc1.xml" href="#" onclick='select(this)'>Virtual Channel 09</a>
+         <a class="dropdown-item" id="vc1.xml" href="#" onclick='select(this)'>Virtual Channel 10</a>
+         <a class="dropdown-item" id="vc1.xml" href="#" onclick='select(this)'>Virtual Channel 11</a>
+         <a class="dropdown-item" id="vc1.xml" href="#" onclick='select(this)'>Virtual Channel 12</a>
+       </div>
+       <hr>
+     </div>
+        <input name="button1" type='button'class="btn" onclick="StartChannel()" value="Start Channel"/>
+        <input name="button2" type='button' class="btn"  onclick="StopChannel()" value="Stop Channel"/>
+        <input name="button3" type='button' class="btn"  onclick="checkplay()" value="Check State"/>
+        <input name="button4" type='button' class="btn"  onclick="checksum()" value="Start Polling"/>
+        <input name="button4" type='button' class="btn"  onclick="checksum()" value="Stop Polling"/>
+        <input name="button5" type='button' class="btn"  onclick="GetChannelState()" value="Check Encoder State"/>
+        <input name="button6" type='button' class="btn"  onclick="GetPublishingPoingState()" value="Check Publishing Point"
+    </p>
+    </div><hr>
+    
+<div id="time"></div><br>
+<div id="resp"></div><br>
+<div id="output"></div><hr>
+<div id="state">Waiting .....</div><hr>
+<div id="running"></div><hr>
+<div id="publishingpoint">Publishing Point State</div><hr>
+    
+
+<!–  JAVASCRIPT CODE HERE –> 
+
+<script>
+
+// Globals //
+
+var videoPlayer = document.getElementById("videoPlayer");
+var player = dashjs.MediaPlayer().create();
+
+var FrameRates = {
+	film: 24,
+	NTSC : 29.97,
+	NTSC_Film: 23.98,
+	NTSC_HD : 59.94,
+	PAL: 25,
+	PAL_HD: 50,
+	web: 30,
+	high: 60
+};    
+    
+ var video = VideoFrame({
+    id : 'videoPlayer',
+	frameRate: 25,
+	callback : function(response) {
+		console.log('callback response: ' + response);
+	}
+});
+
+    
+// Functions //
+
+function startup() {
+
+var timer1;var timer2;var timer3;var timer4;
+clearInterval(timer1);clearInterval(timer2);clearInterval(timer3);clearInterval(timer4);
+
+var d = new Date();
+var time = document.getElementById("time");
+var output = document.getElementById("output");
+var resp = document.getElementById("resp");
+
+output.textContent = "Waiting .....";
+
+fetch('systeminfo.php')
+
+.then(function(response) {
+
+  console.log("Response Status: " + response.status); // returns 200
+  console.log("Response StatusText: " + response.statusText);
+  time.textContent = d;
+  resp.textContent = "HTTP Status: " + response.status +" : "+ response.statusText;
+  return response.text();
+})
+
+.then(function(j) {
+
+// `j` is a JavaScript object
+  console.log("Then Response.Text: " + j);
+  // output.textContent = j;
+  var n = j.includes("<serial-number>BOLD-17030192</serial-number>");
+  if(n === true){
+        time.textContent = d ;
+        output.textContent = "Conductor Connection : OK"; 
+        // var startvid = InitVideoPlayer();
+        // var cstatus = GetChannelState();
+  } else {
+        time.textContent = d + ": Failed to Establish Conductor Connection";
+    }
+  //******
+})
+
+.catch(function(error) {
+  console.log('Looks like there was a problem: \n', error);
+
+})
+
+ var connected = document.getElementById("connected");
+ connected.innerHTML = "API Control - Connected &#9989";
+
+ // Run these two functions ...
+    
+ var startvid = InitVideoPlayer();    
+ var cstatus = GetChannelState();
+ var chkplay = checkplay();
+
+} // **************  End of startup() *****************
+
+function StartChannel() {
+
+var d = new Date();
+var time = document.getElementById("time");
+var output = document.getElementById("output");
+var state  = document.getElementById("state");
+var resp = document.getElementById("resp");
+output.textContent = "Waiting .....";
+
+fetch('startall.php')
+
+.then(function(response) {
+
+  console.log("Response Status: " + response.status); // returns 200
+  console.log("Response StatusText: " + response.statusText);
+  time.textContent = d;
+  resp.textContent = "HTTP Status: " + response.status +" : "+ response.statusText;
+  return response.text();
+})
+
+.then(function(j) {
+
+// `j` is a JavaScript object
+  console.log("Then Response.Text: " + j);
+  output.textContent = j;
+  var n = j.includes("<failed_count>0</failed_count>");
+  if(n === true){
+        state.textContent = d + ": Channel Start : Success OK";
+  } else {
+        state.textContent = d + ": Channel Start : Failed";
+  }
+
+})
+
+.catch(function(error) {
+console.log('Looks like there was a problem: \n', error);
+
+})
+
+var nowstate = GetChannelState();
+// timer1 = setInterval(function(){GetChannelState();}, 30000);
+
+} // ************** End of StartChannel() **************
+
+function StopChannel() {
+
+var d = new Date();
+var time = document.getElementById("time");
+var output = document.getElementById("output");
+var state  = document.getElementById("state");
+var resp = document.getElementById("resp");
+output.textContent = "Waiting .....";
+
+fetch('stopall.php')
+
+.then(function(response) {
+
+  console.log("Response Status: " + response.status); // returns 200
+  console.log("Response StatusText: " + response.statusText);
+  time.textContent = d;
+  resp.textContent = "HTTP Status: " + response.status +" : "+ response.statusText;
+  return response.text();
+})
+
+.then(function(j) {
+
+// `j` is a JavaScript object
+  console.log("Then Response.Text: " + j);
+  output.textContent = j;
+  var n = j.includes("<failed_count>0</failed_count>");
+  if(n === true){
+        state.textContent = d + ": Channel Stop : Success OK";
+  } else {
+        state.textContent = d + ": Channel Stop : Failed";
+  }
+
+var nowstate = GetChannelState();
+
+})
+
+.catch(function(error) {
+console.log('Looks like there was a problem: \n', error);
+
+})
+var chanstate = GetChannelState();
+ // timer2 = setInterval(function(){GetChannelState();}, 30000);
+} // ************* End if StopChannel() ************
+
+function GetChannelState() {
+
+var d = new Date();
+var time = document.getElementById("time");
+var output = document.getElementById("state");
+var running = document.getElementById("running");
+output.textContent = "Checking Channel State .....";
+
+fetch('channel_state.php')
+
+.then(function(response) {
+  console.log("Response Status: " + response.status); // returns 200
+  console.log("Response StatusText: " + response.statusText);
+  // time.textContent = d;
+  resp.textContent = "HTTP Status: " + response.status +" : "+ response.statusText;
+  return response.text();
+})
+
+.then(function(j) {
+  // `j` is a JavaScript object
+  console.log("Then Response.Text: " + j);
+  // output.textContent = j;
+  var n = j.includes("<status>running</status>");
+
+  if(n === true){
+        running.textContent = d + ": Channel is Running";
+  } else {
+        running.textContent = d + ": Channel is IDLE";
+  }
+
+})
+
+.catch(function(error) {
+console.log('Looks like there was a problem: \n', error);
+
+})
+} // ************ End of GetChannelState ************
+
+
+function GetPublishingPoingState() {
+
+var d = new Date();
+var time = document.getElementById("time");
+var output = document.getElementById("state");
+var running = document.getElementById("running");
+var publishingpointstate = document.getElementById("publishingpoint");
+    
+output.textContent = "Checking Publishing Point State .....";
+
+fetch('https://pl-usp-live-01.rte.host/live/a/channel1/channel1.isml/state')
+
+.then(function(response) {
+  console.log("Response Status: " + response.status); // returns 200
+  console.log("Response StatusText: " + response.statusText);
+  // time.textContent = d;
+  resp.textContent = "HTTP Status: " + response.status +" : "+ response.statusText;
+  return response.text();
+})
+
+.then(function(j) {
+  // `j` is a JavaScript object
+  console.log("Then Response.Text: " + j);
+  output.textContent = j;
+  var n = j.includes('started');
+  var v = j.includes('1.8.4');
+    
+  if(v === true){
+        var UnifiedVersion = 'Unified Streaming Platform(version=1.8.4)' ;
+  } else {
+        var UnifiedVersion = 'Unified Streaming Platform(version=Unkown)' ;
+  }    
+    
+    
+  if(n === true){
+        publishingpointstate.textContent = d + " : " + UnifiedVersion + ": Publishing Point is Started - OK"
+  } else {
+        publishingpointstate.textContent = d + " : " + UnifiedVersion + ": Publishing Point is  IDLE";
+  }
+
+})
+
+.catch(function(error) {
+console.log('Looks like there was a problem retrieving the Publishing Point State: \n', error);
+
+})
+} // ************ End of GetPublishingPointState ************
+    
+    
+function checkplay() {
+        //alert(player.getVersion());
+        //alert(player.timeAsUTC().toString());
+        timer3 = setInterval(function(){UpdateTime();}, 50);
+        //alert(player.time().toString());
+}
+
+function UpdateTime() {
+ var chkvar = convert();
+}
+
+
+function InitVideoPlayer() {
+ player.initialize(videoPlayer, null, true);
+ player.getDebug().setLogToBrowserConsole(false);
+ var dashurl = "https://pl-usp-live-01.rte.host/live/a/vc1/alternate.isml/.mpd" + '?filter=((trackName!="audio_description"%26%26trackName!="alternative_language"))';
+ var dashurl = "https://pl-usp-live-01.rte.host/live/a/channel1/alternate.isml/.mpd" + '?filter=((trackName!="audio_description"%26%26trackName!="alternative_language"))';
+
+ player.autoPlay = true;
+ player.attachSource(dashurl);
+}
+
+
+function convert(){
+ // Unixtimestamp
+ var unixtimestamp = player.timeAsUTC(); 
+ // Months array
+ var months_arr = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+ // Convert timestamp to milliseconds
+ var date = new Date(unixtimestamp*1000);
+ // Year
+ var year = date.getFullYear();
+ // Month
+ var month = months_arr[date.getMonth()];
+ // Day
+ var day = date.getDate();
+ // Hours
+ var hours = date.getHours();
+ // Minutes
+ var minutes = "0" + date.getMinutes();
+ // Seconds
+ var seconds = "0" + date.getSeconds();
+ // Milliseconds
+ var milliseconds = date.getMilliseconds();
+ var frame = video.get().toString();
+ // Display date time in MM-dd-yyyy h:m:s format
+ //var convdataTime = month+'-'+day+'-'+year+' '+hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+ var convdataTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2) + '.' +  frame.substr(-2);
+ document.getElementById('playertime').innerHTML = convdataTime;
+}
+
+
+function checksum() {
+alert(date.now());
+}
+</script>
+</body>

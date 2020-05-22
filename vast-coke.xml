@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <VAST xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="vast.xsd" version="3.0">
- <Ad id="709684667">
+ <Ad id="709684666">
   <InLine>
    <AdSystem>GDFP</AdSystem>
    <AdTitle>External NCA1C1L1 Preroll</AdTitle>
@@ -8,9 +8,9 @@
    <Error><![CDATA[https://pubads.g.doubleclick.net/pagead/conversion/?ai=B-DryGHzGXrb0O87C1wbo9IqAAdiuj-sGAAAAEAEgqN27JjgAWICYpMbXAWC7hoCA0Aq6AQo3Mjh4OTBfeG1syAEFwAIC4AIA6gIjLzEyNDMxOTA5Ni9leHRlcm5hbC9hZF9ydWxlX3NhbXBsZXP4AoLSHoADAZADjAaYA6wCqAMB4AQB0gUGEPDYs9ICkAYBoAYjqAfs1RuoB_PRG6gHltgbqAfC2hvYBwHgBwvSCAkIgOGAEBABGB2YCwE&sigh=kCnNv8iSQ1E&label=videoplayfailed[ERRORCODE]]]></Error>
    <Impression><![CDATA[https://securepubads.g.doubleclick.net/pcs/view?xai=AKAOjstDLJxfeFsuizzGU9w3RBfTDLplmpVpUA5FoUaSsSM1YcQDQFrGywDDXtloa7oV5Mfjq7kXO1y8d_AM_DjQtzNxjCI6jtqk6P6JqL5vmqsfUZwVcw86SMB5VJ2hGf7lyS_RYFvoHqbkzzDrQsx52PiTV3_vSEmTOk7rusHjCQiviXL0Aa_mn_pqK0jrG7n2fgrV0uKCAxWGneElvn8Ecm-LiX64ha_q7Lrlg-NmcL6N0ebDTOuRG5q27nAdW0c_IDBmaw&sig=Cg0ArKJSzBOUVFGP89e1EAE&adurl=]]></Impression>
    <Creatives>
-    <Creative id="57866666667" sequence="1">
+    <Creative id="57866666666" sequence="1">
      <Linear>
-      <Duration>00:02:52</Duration>
+      <Duration>00:01:00</Duration>
       <TrackingEvents>
        <Tracking event="start"><![CDATA[https://pubads.g.doubleclick.net/pagead/conversion/?ai=B-DryGHzGXrb0O87C1wbo9IqAAdiuj-sGAAAAEAEgqN27JjgAWICYpMbXAWC7hoCA0Aq6AQo3Mjh4OTBfeG1syAEFwAIC4AIA6gIjLzEyNDMxOTA5Ni9leHRlcm5hbC9hZF9ydWxlX3NhbXBsZXP4AoLSHoADAZADjAaYA6wCqAMB4AQB0gUGEPDYs9ICkAYBoAYjqAfs1RuoB_PRG6gHltgbqAfC2hvYBwHgBwvSCAkIgOGAEBABGB2YCwE&sigh=kCnNv8iSQ1E&label=part2viewed&ad_mt=[AD_MT]]]></Tracking>
        <Tracking event="firstQuartile"><![CDATA[https://pubads.g.doubleclick.net/pagead/conversion/?ai=B-DryGHzGXrb0O87C1wbo9IqAAdiuj-sGAAAAEAEgqN27JjgAWICYpMbXAWC7hoCA0Aq6AQo3Mjh4OTBfeG1syAEFwAIC4AIA6gIjLzEyNDMxOTA5Ni9leHRlcm5hbC9hZF9ydWxlX3NhbXBsZXP4AoLSHoADAZADjAaYA6wCqAMB4AQB0gUGEPDYs9ICkAYBoAYjqAfs1RuoB_PRG6gHltgbqAfC2hvYBwHgBwvSCAkIgOGAEBABGB2YCwE&sigh=kCnNv8iSQ1E&label=videoplaytime25&ad_mt=[AD_MT]]]></Tracking>
@@ -32,8 +32,8 @@
        <ClickThrough id="GDFP"><![CDATA[https://pubads.g.doubleclick.net/pcs/click?xai=AKAOjsuUmpW9FH0YPCB-_o50OWwUdsBB2M7iaOH4Z60faGfUe0iMMvveBXTdxqk9CDdtVJVvJ7RlVYqj7x5BsdUR-WZVgZaQtasXKv8-sUQKY4X22CG4PKgAddnuTGutk7BLtguY8-ScE2NCNCCAOv6wSIQVZEHj-YrwVnKsXLUipuQf_N3n8tlL6JloMYBkGBxiQrlAP_xWQOKlKc16Dq04fiFmJEDIYYFVY7vmYlXWtF9gjZFGbhQXdE0KRMgKtnY&sig=Cg0ArKJSzKbvMw871_Q1&adurl=https://developers.google.com/interactive-media-ads/docs/vastinspector_dual]]></ClickThrough>
       </VideoClicks>
       <MediaFiles>
-       <MediaFile id="GDFP" delivery="progressive" width="1280" height="720" type="video/mp4" bitrate="398" scalable="true" maintainAspectRatio="true"><![CDATA[http://unified.dash-labs.com/vod/hboremixstream2-v2.mp4]]></MediaFile>
-       <MediaFile id="GDFP" delivery="progressive" width="640" height="360" type="video/mp4" bitrate="115" scalable="true" maintainAspectRatio="true"><![CDATA[https://http://unified.dash-labs.com/vod/hboremixstream2-v2.mp4]]></MediaFile>
+       <MediaFile id="GDFP" delivery="progressive" width="1280" height="720" type="video/mp4" bitrate="398" scalable="true" maintainAspectRatio="true"><![CDATA[https://unified.dash-labs.com/vod/coke.mp4]]></MediaFile>
+       <MediaFile id="GDFP" delivery="progressive" width="640" height="360" type="video/mp4" bitrate="115" scalable="true" maintainAspectRatio="true"><![CDATA[https://    unified.dash-labs.com/vod/coke.mp4]]></MediaFile>
       </MediaFiles>
      </Linear>
     </Creative>

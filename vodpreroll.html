@@ -1,0 +1,118 @@
+<head>
+  <link href="https://vjs.zencdn.net/7.7.6/video-js.css" rel="stylesheet" />
+
+<!-- CSS only -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+<!-- JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+  <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
+  <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+</head>
+
+<body style="background-color:#202020;">
+
+<div style="margin: 20px 80px 20px 80px; border-radius: 25px; border: 2px solid #73AD21;"><hr> <h1 style="color:#FFFFFF;">&nbsp&nbsp&nbsp&nbsp AWS MediaTailor / Unfied Remix /  VOD Pre Roll / Custom ADS / Campaign2 / Ad.Params</h1<hr><hr></div>
+
+<div style="margin: 20px 80px 20px 80px; border-radius: 25px; border: 2px solid #73AD21;" class="jumbotron">
+
+<table><tbody<tr>
+<td><p><h2>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp SOURCE CONTENT &nbsp &nbsp &nbsp</h2></p> </td><td><p><h2>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp MEDIATAILOR - 1 x PROMO &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp </h2></p></td><td><p><h2>&nbsp &nbsp MEDIATAILOR - 1 x AD</h2></td><td></p><p><h2>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp AD PODS 1xAD 1xPROMO</td>
+</tr><tbody></table>
+
+<table>
+<tbody>
+<tr>
+<td>
+
+<video id=video1 width=480 height=270 class="video-js vjs-default-skin" controls>
+  <source
+     src="https://s3-us-west-2.amazonaws.com/vast-demo-bucket/caminandes/master.m3u8"
+     type="application/x-mpegURL">
+</video>
+</td>
+
+<td>
+<video id=video2 width=480 height=270 class="video-js vjs-default-skin" controls>
+  <source
+     src="https://d7b8f255eb544a2ea861126bdf36d95a.mediatailor.us-east-1.amazonaws.com/v1/master/966fa65f8b8518c3b14cf1d96aa781014e965ebb/TestCampaign2/master.m3u8?ads.param1=vmap-hbo.xml&ads.param2=US"
+     type="application/x-mpegURL">
+</video>
+</td>
+
+<td>
+<video id=video3 width=480 height=270 class="video-js vjs-default-skin" controls>
+  <source
+     src="https://d7b8f255eb544a2ea861126bdf36d95a.mediatailor.us-east-1.amazonaws.com/v1/master/966fa65f8b8518c3b14cf1d96aa781014e965ebb/TestCampaign2/master.m3u8?ads.param1=vmap.xml&ads.param2=GB"
+     type="application/x-mpegURL">
+</video>
+</td>
+
+<td>
+<video id=video4 width=480 height=270 class="video-js vjs-default-skin" controls>
+<source
+   src="https://d7b8f255eb544a2ea861126bdf36d95a.mediatailor.us-east-1.amazonaws.com/v1/master/966fa65f8b8518c3b14cf1d96aa781014e965ebb/TestCampaign2/master.m3u8?ads.param1=vast-adpod.xml&ads.param2=GB"
+   type="application/x-mpegURL">
+</video>
+</td>
+</tr>
+</tbody>
+</table>
+<hr>
+
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="#" role="button" onclick="StartPlayers()">Play</a>
+    <a class="btn btn-primary btn-lg" href="#" role="button" onclick="ReloadPlayers()">Reload</a>
+    <a class="btn btn-primary btn-lg" href="#" role="button" onclick="MutePlayers()">Mute</a>
+    <a class="btn btn-primary btn-lg" href="#" role="button" onclick="UnMutePlayers()">UnMute</a>
+    <a class="btn btn-primary btn-lg" href="#" role="button" onclick="PausePlayers()">Pause</a>
+  </p>
+
+<hr><div><p>
+Source : https://s3-us-west-2.amazonaws.com/vast-demo-bucket/caminandes/master.m3u8
+</p></div>
+<hr><div><p>
+ADS : https://unified.dash-labs.com/vod/ads/[player_params.param1]?param1=[player_params.param1]&ampparam2=[player_params.param2]amp&session=[session.id]
+</p></div>
+<hr><div><p>
+ Player1 URL : https://d7b8f255eb544a2ea861126bdf36d95a.mediatailor.us-east-1.amazonaws.com/v1/master/966fa65f8b8518c3b14cf1d96aa781014e965ebb/TestCampaign2/master.m3u8?ads.param1=vmap-hbo.xml&ads.param2=US
+</p></div>
+<hr><div><p>
+ Player2 URL : https://d7b8f255eb544a2ea861126bdf36d95a.mediatailor.us-east-1.amazonaws.com/v1/master/966fa65f8b8518c3b14cf1d96aa781014e965ebb/TestCampaign2/master.m3u8?ads.param1=vmap.xml&ads.param2=GB
+</p></div>
+<hr><div><p>
+ Player3 URL : https://d7b8f255eb544a2ea861126bdf36d95a.mediatailor.us-east-1.amazonaws.com/v1/master/966fa65f8b8518c3b14cf1d96aa781014e965ebb/TestCampaign2/master.m3u8?ads.param1=vast-adpods.xml&ads.param2=GB
+</p></div><hr>
+
+</div>
+
+<script src="https://vjs.zencdn.net/7.7.6/video.js"></script>
+<script>
+
+var player1 = videojs('video1');var player2 = videojs('video2');var player3 = videojs('video3');var player4 = videojs('video4');
+
+function StartPlayers() {
+player1.play();player2.play();player3.play();player4.play()
+}
+
+function PausePlayers() {
+player1.pause();player2.pause();player3.pause();player4.pause()
+}
+
+function MutePlayers() {
+player1.muted(true);player2.muted(true);player3.muted(true);player4.muted(true)
+}
+
+function UnMutePlayers() {
+player1.muted(false);player2.muted(false);player3.muted(false);player4.muted(false)
+}
+
+function ReloadPlayers() {
+player1.load();player2.load();player3.load();player4.load()
+}
+
+
+</script>

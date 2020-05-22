@@ -15,35 +15,41 @@
 
 <body style="background-color:#202020;">
 
-<div><hr> <h1 style="color:#FFFFFF;">&nbsp&nbsp&nbsp&nbsp AWS MediaTailor VOD Pre & Post Roll Campaign2</h1<hr><hr></div>
+<div><hr> <h1 style="color:#FFFFFF;">&nbsp&nbsp&nbsp&nbsp AWS MediaTailor / Unfied Remix /  VOD Pre Roll / Custom ADS / Campaign2 / Ad.Params</h1<hr><hr></div>
 
 <div class="jumbotron">
+
+<table><tbody<tr>
+<td><p><h2>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp ORIGINAL &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</h2></p> </td><td><p><h2>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp MEDIATAILOR &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp </h2></p></td><td><p><h2>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp MEDIATAILOR</h2></p></td>
+</tr><tbody></table>
+
+
 <table>
 <tbody>
 <tr>
 <td>
+
 <video id=video1 width=480 height=270 class="video-js vjs-default-skin" controls>
   <source
      src="https://s3-us-west-2.amazonaws.com/vast-demo-bucket/caminandes/master.m3u8"
      type="application/x-mpegURL">
 </video>
 </td>
-<td><p>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp        </p></td>
+
 <td>
 <video id=video2 width=480 height=270 class="video-js vjs-default-skin" controls>
   <source
-     src="https://d7b8f255eb544a2ea861126bdf36d95a.mediatailor.us-east-1.amazonaws.com/v1/master/966fa65f8b8518c3b14cf1d96aa781014e965ebb/TestCampaign2/master.m3u8"
+     src="https://d7b8f255eb544a2ea861126bdf36d95a.mediatailor.us-east-1.amazonaws.com/v1/master/966fa65f8b8518c3b14cf1d96aa781014e965ebb/TestCampaign2/master.m3u8?ads.param1=vmap-hbo.xml&ads.param2=GB"
      type="application/x-mpegURL">
 </video>
 </td>
-</tr>
-<tr>
+
 <td>
- "https://s3-us-west-2.amazonaws.com/vast-demo-bucket/caminandes/master.m3u8"
-</td>
-<td></td>
-<td>
-"https://d7b8f255eb544a2ea861126bdf36d95a.mediatailor.us-east-1.amazonaws.com/v1/master/966fa65f8b8518c3b14cf1d96aa781014e965ebb/TestCampaign2/TestCampaign/master.m3u8"
+<video id=video3 width=480 height=270 class="video-js vjs-default-skin" controls>
+  <source
+     src="https://d7b8f255eb544a2ea861126bdf36d95a.mediatailor.us-east-1.amazonaws.com/v1/master/966fa65f8b8518c3b14cf1d96aa781014e965ebb/TestCampaign2/master.m3u8?ads.param1=vmap.xml&ads.param2=GB"
+     type="application/x-mpegURL">
+</video>
 </td>
 </tr>
 </tbody>
@@ -55,7 +61,12 @@
     <a class="btn btn-primary btn-lg" href="#" role="button" onclick="PausePlayers()">Pause</a>
   </p>
 
-
+<hr>
+<div><p>
+https://d7b8f255eb544a2ea861126bdf36d95a.mediatailor.us-east-1.amazonaws.com/v1/master/966fa65f8b8518c3b14cf1d96aa781014e965ebb/TestCampaign2/master.m3u    8?ads.param1=vmap.xml&ads.param2=GB"
+</p>
+</div>
+<hr>
 
 </div>
 <script src="https://vjs.zencdn.net/7.7.6/video.js"></script>
@@ -63,15 +74,18 @@
 
 var player1 = videojs('video1');
 var player2 = videojs('video2');
+var player3 = videojs('video3');
 
 function StartPlayers() {
 player1.play()
 player2.play()
+player3.play()
 }
 
 function PausePlayers() {
 player1.pause()
 player2.pause()
+player3.pause()
 }
 
 </script>

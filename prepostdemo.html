@@ -1,5 +1,6 @@
 <head>
   <link href="https://vjs.zencdn.net/7.7.6/video-js.css" rel="stylesheet" />
+ <script src="https://vjs.zencdn.net/7.7.6/video.min.js"></script>
 
 <!-- CSS only -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -9,32 +10,39 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
-  <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
-  <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+  <script src="https://vjs.zencdn.net/7.7.6/video.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-overlay/1.1.4/videojs-overlay.min.js"></script>
 </head>
 
 <body style="background-color:#202020;">
 
-<div><hr> <h1 style="color:#FFFFFF;">&nbsp&nbsp&nbsp&nbsp AWS MediaTailor VOD Pre & Post Roll</h1<hr><hr></div>
+<div>
+<img style="float: left; margin: 2px 1px 1px 20px;width:180px;height:60px;" src="logo-fincons-web.png"></img> 
+</div>
+<div>
+<h1 style="color:#FFFFFF; margin: 40px 1px 1px 460px;margin-top: 20px">&nbsp&nbsp&nbsp&nbsp AWS MediaTailor VOD Pre, Mid & Post Roll</h1><hr><hr></div>
+</div>
+
+
 
 <div class="jumbotron">
 <table>
 <tbody>
 <tr>
 <td>
-<video id=video1 width=480 height=270 class="video-js vjs-default-skin" controls>
+<video-js id=video1 width=480 height=270 class="video-js vjs-default-skin" controls>
   <source
-     src="https://s3-us-west-2.amazonaws.com/vast-demo-bucket/caminandes/master.m3u8"
+     src="https://d2j2coas2r3kl0.cloudfront.net/vast-demo-bucket/caminandes/master.m3u8"
      type="application/x-mpegURL">
-</video>
+</video-js>
 </td>
 <td><p>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp        </p></td>
 <td>
-<video id=video2 width=480 height=270 class="video-js vjs-default-skin" controls>
+<video-js id=video2 width=480 height=270 class="video-js vjs-default-skin" controls>
   <source
-     src="https://6dd34855971943c8a28242c7c5bb049f.mediatailor.us-east-1.amazonaws.com/v1/master/966fa65f8b8518c3b14cf1d96aa781014e965ebb/TestCampaign/master.m3u8"
+     src="https://d2j2coas2r3kl0.cloudfront.net/v1/master/966fa65f8b8518c3b14cf1d96aa781014e965ebb/TestCampaign/master.m3u8"
      type="application/x-mpegURL">
-</video>
+</video-js>
 </td>
 </tr>
 <tr>
@@ -58,7 +66,10 @@
 
 
 </div>
-<script src="https://vjs.zencdn.net/7.7.6/video.js"></script>
+<!-- 
+<script src="https://vjs.zencdn.net/7.7.6/video.js"></script> 
+<script src="videojs-http-streaming.min.js"></script>
+-->
 <script>
 
 var player1 = videojs('video1');
@@ -67,6 +78,26 @@ var player2 = videojs('video2');
 function StartPlayers() {
 player1.play()
 player2.play()
+
+ videojs(document.querySelector('player1')).overlay();
+
+player.overlay({
+   overlays: [{
+ 
+     // This overlay will appear when a video is playing and disappear when
+     // the player is paused.
+     start: 'playing',
+     end: 'pause'
+   }, {
+ 
+     // This overlay will appear when the "custom1" event is triggered and
+     // disappear when the "custom2" event is triggered.
+     start: 'custom1',
+     end: 'custom2'
+   }]
+ });
+
+
 }
 
 function PausePlayers() {
