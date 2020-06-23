@@ -1,7 +1,16 @@
+remix.s3mediamanager.com {
+        encode zstd gzip
+        templates
+        file_server browse 
+        header CORS-Header Access-Control-Allow-Origin "*"
+}
+
 localhost {
 	encode zstd gzip
 	templates
 	file_server browse
+        header CORS-Header Access-Control-Allow-Origin "*"
+
 }
 
 :8080 {
@@ -16,5 +25,6 @@ localhost {
         encode zstd gzip
         templates
         file_server browse
+        header CORS-Header Access-Control-Allow-Origin "*"
 }
 

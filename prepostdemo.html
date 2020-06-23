@@ -32,7 +32,7 @@
 <td>
 <video-js id=video1 width=480 height=270 class="video-js vjs-default-skin" controls>
   <source
-     src="https://d2j2coas2r3kl0.cloudfront.net/vast-demo-bucket/caminandes/master.m3u8"
+     src="https://d13rxijzk6j36d.cloudfront.net/caminandes/master.m3u8"
      type="application/x-mpegURL">
 </video-js>
 </td>
@@ -78,26 +78,6 @@ var player2 = videojs('video2');
 function StartPlayers() {
 player1.play()
 player2.play()
-
- videojs(document.querySelector('player1')).overlay();
-
-player.overlay({
-   overlays: [{
- 
-     // This overlay will appear when a video is playing and disappear when
-     // the player is paused.
-     start: 'playing',
-     end: 'pause'
-   }, {
- 
-     // This overlay will appear when the "custom1" event is triggered and
-     // disappear when the "custom2" event is triggered.
-     start: 'custom1',
-     end: 'custom2'
-   }]
- });
-
-
 }
 
 function PausePlayers() {

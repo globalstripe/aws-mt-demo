@@ -15,53 +15,50 @@
 
 <body style="background-color:#202020;">
 
+
+  <div class="container"></div>
+
+  <div class="row">
 <div style="margin: 20px 80px 20px 80px; border-radius: 25px; border: 2px solid #73AD21;"><hr> <h1 style="color:#FFFFFF;">&nbsp&nbsp&nbsp&nbsp AWS MediaTailor / Unfied Remix /  VOD Pre Roll / Custom ADS / Campaign2 / Ad.Params</h1<hr><hr></div>
+</div>
 
-<div style="margin: 20px 80px 20px 80px; border-radius: 25px; border: 2px solid #73AD21;" class="jumbotron">
 
-<table><tbody<tr>
-<td><p><h2>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp SOURCE CONTENT &nbsp &nbsp &nbsp</h2></p> </td><td><p><h2>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp MEDIATAILOR - 1 x PROMO &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp </h2></p></td><td><p><h2>&nbsp &nbsp MEDIATAILOR - 1 x AD</h2></td><td></p><p><h2>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp AD PODS 1xAD 1xPROMO</td>
-</tr><tbody></table>
+  <div class="row"> 
 
-<table>
-<tbody>
-<tr>
-<td>
+    <div class="col-sm">
+      <video id=video1  class="video-js vjs-default-skin" controls>
+        <source
+          src="https://d7b8f255eb544a2ea861126bdf36d95a.mediatailor.us-east-1.amazonaws.com/v1/master/966fa65f8b8518c3b14cf1d96aa781014e965ebb/TestCampaign2/master.m3u8?ads.param1=noadsvast.xml&ads.param2=US"
+          type="application/x-mpegURL">
+      </video>
+    </div>
 
-<video id=video1 width=480 height=270 class="video-js vjs-default-skin" controls>
-  <source
-     src="https://s3-us-west-2.amazonaws.com/vast-demo-bucket/caminandes/master.m3u8"
-     type="application/x-mpegURL">
-</video>
-</td>
+    <div class="col-sm">
+      <video id=video2  class="video-js vjs-default-skin" controls>
+        <source
+          src="https://d7b8f255eb544a2ea861126bdf36d95a.mediatailor.us-east-1.amazonaws.com/v1/master/966fa65f8b8518c3b14cf1d96aa781014e965ebb/TestCampaign2/master.m3u8?ads.param1=vmap-hbo.xml&ads.param2=US"
+          type="application/x-mpegURL">
+      </video>
+    </div>
 
-<td>
-<video id=video2 width=480 height=270 class="video-js vjs-default-skin" controls>
-  <source
-     src="https://d7b8f255eb544a2ea861126bdf36d95a.mediatailor.us-east-1.amazonaws.com/v1/master/966fa65f8b8518c3b14cf1d96aa781014e965ebb/TestCampaign2/master.m3u8?ads.param1=vmap-hbo.xml&ads.param2=US"
-     type="application/x-mpegURL">
-</video>
-</td>
+    <div class="col-sm">
+      <video id=video3  class="video-js vjs-default-skin" controls>
+        <source
+          src="https://d7b8f255eb544a2ea861126bdf36d95a.mediatailor.us-east-1.amazonaws.com/v1/master/966fa65f8b8518c3b14cf1d96aa781014e965ebb/TestCampaign2/master.m3u8?ads.param1=vmap.xml&ads.param2=GB"
+          type="application/x-mpegURL">
+      </video>
+      </div>
 
-<td>
-<video id=video3 width=480 height=270 class="video-js vjs-default-skin" controls>
-  <source
-     src="https://d7b8f255eb544a2ea861126bdf36d95a.mediatailor.us-east-1.amazonaws.com/v1/master/966fa65f8b8518c3b14cf1d96aa781014e965ebb/TestCampaign2/master.m3u8?ads.param1=vmap.xml&ads.param2=GB"
-     type="application/x-mpegURL">
-</video>
-</td>
-
-<td>
-<video id=video4 width=480 height=270 class="video-js vjs-default-skin" controls>
-<source
-   src="https://d7b8f255eb544a2ea861126bdf36d95a.mediatailor.us-east-1.amazonaws.com/v1/master/966fa65f8b8518c3b14cf1d96aa781014e965ebb/TestCampaign2/master.m3u8?ads.param1=vast-adpod.xml&ads.param2=GB"
-   type="application/x-mpegURL">
-</video>
-</td>
-</tr>
-</tbody>
-</table>
-<hr>
+    <div class="col-sm">
+      <video id=video4  class="video-js vjs-default-skin" controls>
+      <source
+        src="https://d7b8f255eb544a2ea861126bdf36d95a.mediatailor.us-east-1.amazonaws.com/v1/master/966fa65f8b8518c3b14cf1d96aa781014e965ebb/TestCampaign2/master.m3u8?ads.param1=vast-adpod.xml&ads.param2=GB"
+        type="application/x-mpegURL">
+      </video>
+    </div>
+  
+  </div>
+</div>
 
   <p class="lead">
     <a class="btn btn-primary btn-lg" href="#" role="button" onclick="StartPlayers()">Play</a>
@@ -116,3 +113,7 @@ player1.load();player2.load();player3.load();player4.load()
 
 
 </script>
+
+</body>
+</html>
+

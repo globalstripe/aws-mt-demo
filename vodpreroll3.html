@@ -1,0 +1,176 @@
+<head>
+  <link href="https://vjs.zencdn.net/7.7.6/video-js.css" rel="stylesheet" />
+
+<!-- CSS only -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+<!-- JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+  <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
+  <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+
+</head>
+
+<body style="background-color:#202020;">
+
+
+ <style>
+  /* Tooltip */
+  .tooltip > .tooltip-arrow {
+    background-color: #73AD21; 
+    color: #FFFFFF; 
+    border: 1px solid green; 
+    padding: 15px;
+    font-size: 20px;
+  }
+  /* Tooltip on top */
+  .tooltip.top > .tooltip-arrow {
+    border-top: 5px solid green;
+  }
+  /* Tooltip on bottom */
+  .tooltip.bottom > .tooltip-arrow {
+    border-bottom: 5px solid blue;
+  }
+  /* Tooltip on left */
+  .video-js + .tooltip.left > .tooltip-arrow {
+    border-left: 5px solid red;
+  }
+  /* Tooltip on right */
+  .tooltip.right > .tooltip-arrow {
+    border-right: 5px solid black;
+  }
+  </style>
+  
+        <!-- src="https://s3-us-west-2.amazonaws.com/vast-demo-bucket/caminandes/master.m3u8" -->
+
+    <div style="margin: 20px 80px 20px 80px; border-radius: 25px; border: 2px solid #73AD21;text-align: center;" class="container-left">
+        <div style="text-align: center;"  class="container-center">
+        <h1 style="text-align: center; color:#FFFFFF;">&nbsp&nbsp&nbsp&nbsp AWS MediaTailor SSAI/Unfied Remix/Pre-Roll ADPods/Promo+ADS/Campaign2</h1>
+        </div>
+    </div>
+
+<div style="margin: 20px 80px 20px 80px; border-radius: 25px; border: 2px solid #73AD21; color:#FFFFFF;" class="container-left">
+
+
+  <div style="margin: 20px 80px 20px 80px;" class="row"> 
+
+    <div class="col-sm">
+      <video id=video1  class="video-js vjs-default-skin " data-placement="Bottom" data-toggle="tooltip" 
+         title="Player One - MediaTailor - No Ads"
+         controls preload="auto" poster="poster.jpg">
+        <source
+          src="https://d13rxijzk6j36d.cloudfront.net/master.m3u8"
+          type="application/x-mpegURL">
+      </video>
+    </div>
+
+    <div class="col-sm">
+      <video id=video2  class="video-js vjs-default-skin" data-placement="Bottom" data-toggle="tooltip" title="Video Player Two - UK Coke Ad" 
+        controls preload="auto" poster="poster.jpg">
+        <source
+          src="https://d7b8f255eb544a2ea861126bdf36d95a.mediatailor.us-east-1.amazonaws.com/v1/master/966fa65f8b8518c3b14cf1d96aa781014e965ebb/TestCampaign2/master.m3u8?ads.param1=vmap-hbo.xml&ads.param2=GB"
+          type="application/x-mpegURL">
+      </video>
+    </div>
+
+    <div class="col-sm">
+      <video id=video3  class="video-js vjs-default-skin" data-placement="Bottom" data-toggle="tooltip" title="Video Player Three - Coke Ad India" 
+         controls preload="auto" poster="poster.jpg">
+        <source
+          src="https://d7b8f255eb544a2ea861126bdf36d95a.mediatailor.us-east-1.amazonaws.com/v1/master/966fa65f8b8518c3b14cf1d96aa781014e965ebb/TestCampaign2/master.m3u8?ads.param1=vmap.xml&ads.param2=IN"
+          type="application/x-mpegURL">
+      </video>
+      </div>
+
+    <div class="col-sm">
+      <video id=video4  class="video-js vjs-default-skin" data-placement="Bottom" data-toggle="tooltip" title="Video Player Four - AdPods + Remixed Promos" 
+        controls preload="auto" poster="poster.jpg">
+      <source
+        src="https://d7b8f255eb544a2ea861126bdf36d95a.mediatailor.us-east-1.amazonaws.com/v1/master/966fa65f8b8518c3b14cf1d96aa781014e965ebb/TestCampaign2/master.m3u8?ads.param1=vast-adpod.xml&ads.param2=GB"
+        type="application/x-mpegURL">
+      </video>
+    </div>
+
+    </div>
+</div>
+
+
+<div style="padding-top: 20px; padding-left: 30px; margin: 20px 80px 20px 80px; border-radius: 25px; border: 2px solid #73AD21; color:#FFFFFF;" class="container-left">
+
+<div class="row"><p>
+Source Content: https://d13rxijzk6j36d.cloudfront.net/master.m3u8 (CloudFront / Any CDN / Level3)
+</p></div>
+
+<div class="row"><p>
+
+ADS : https://unified.dash-labs.com/vod/ads/[player_params.param1]?param1=[player_params.param1]&ampparam2=[player_params.param2]amp&session=[session.id]
+</p></div>
+
+<div class="row"><p>
+Player1 URL : https://d7b8f255eb544a2ea861126bdf36d95a.mediatailor.us-east-1.amazonaws.com/v1/master/966fa65f8b8518c3b14cf1d96aa781014e965ebb/TestCampaign2/master.m3u8?ads.param1=vmap-hbo.xml&ads.param2=US
+</p></div>
+
+<div class="row"><p>
+ Player2 URL : https://d7b8f255eb544a2ea861126bdf36d95a.mediatailor.us-east-1.amazonaws.com/v1/master/966fa65f8b8518c3b14cf1d96aa781014e965ebb/TestCampaign2/master.m3u8?ads.param1=vmap.xml&ads.param2=GB
+</p></div>
+
+<div class="row"><p>
+ Player3 URL : https://d7b8f255eb544a2ea861126bdf36d95a.mediatailor.us-east-1.amazonaws.com/v1/master/966fa65f8b8518c3b14cf1d96aa781014e965ebb/TestCampaign2/master.m3u8?ads.param1=vast-adpods.xml&ads.param2=IN
+</p></div>
+
+<div class="row"><p>
+ Player4 URL : https://d7b8f255eb544a2ea861126bdf36d95a.mediatailor.us-east-1.amazonaws.com/v1/master/966fa65f8b8518c3b14cf1d96aa781014e965ebb/TestCampaign2/master.m3u8?ads.param1=vast-adpods.xml&ads.param2=GB
+</p></div><hr>
+
+</div>
+
+
+<div style="padding-top: 20px; margin: 20px 80px 20px 80px; border-radius: 25px; border: 2px solid #73AD21; color:#FFFFFF;" class="container-left">
+    <div style="margin: 20px 80px 20px 20px;align: center;" class="container-center">
+          <a class="btn btn-primary btn-lg" href="#" role="button" data-placement="Bottom" data-toggle="tooltip" title="Start All Players" onclick="StartPlayers()">Play</a>
+          <a class="btn btn-primary btn-lg" href="#" role="button" data-placement="Bottom" data-toggle="tooltip" title="Reload All Players" onclick="ReloadPlayers()">Reload</a>
+          <a class="btn btn-primary btn-lg" href="#" role="button"  data-placement="Bottom" data-toggle="tooltip" title="Mute All Players"onclick="MutePlayers()">Mute</a>
+          <a class="btn btn-primary btn-lg" href="#" role="button"  data-placement="Bottom" data-toggle="tooltip" title="UnMute All Players"onclick="UnMutePlayers()">UnMute</a>
+          <a class="btn btn-primary btn-lg" href="#" role="button"  data-placement="Bottom" data-toggle="tooltip" title="Pause All Players"onclick="PausePlayers()">Pause</a>
+     </div>
+</div>
+
+
+<script src="https://vjs.zencdn.net/7.7.6/video.js"></script>
+<script>
+
+$(function(){
+  $('[data-toggle="tooltip"]').tooltip();   
+});
+
+var player1 = videojs('video1');var player2 = videojs('video2');var player3 = videojs('video3');var player4 = videojs('video4');
+
+function StartPlayers() {
+player1.play();player2.play();player3.play();player4.play()
+}
+
+function PausePlayers() {
+player1.pause();player2.pause();player3.pause();player4.pause()
+}
+
+function MutePlayers() {
+player1.muted(true);player2.muted(true);player3.muted(true);player4.muted(true)
+}
+
+function UnMutePlayers() {
+player1.muted(false);player2.muted(false);player3.muted(false);player4.muted(false)
+}
+
+function ReloadPlayers() {
+player1.load();player2.load();player3.load();player4.load()
+}
+
+
+</script>
+
+</body>
+</html>
+
