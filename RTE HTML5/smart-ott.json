@@ -1,0 +1,51 @@
+{
+  "all": {
+    "api": {
+      "kaltura_dms": {
+        "appname": "com.kaltura.demo.24i",
+        "base_url": "http://dms-us.ott.kaltura.com/api.svc/",
+        "cver": "1.0.0",
+        "password": "tvinci",
+        "pltfrm": "iOS",
+        "username": "dms"
+      },
+      "namespace": "kaltura_tvinci"
+    },
+    "application": {
+      "appname": "Smart OTT",
+      "identifier": "NAB24i",
+      "template": "smart_ott"
+    },
+    "features": {
+      "accounts": {
+        "login_at_content_play": "Â¬",
+        "login_at_startup": "disabled"
+      },
+      "application": {
+        "accessible": true
+      },
+      "promo_splashscreen": {
+        "enabled": true,
+        "promo_timeout": "5",
+        "promo_url": "https://24ishoppublic.s3-eu-west-1.amazonaws.com/NAB24i/1466782226497.promo-splashscreen.png",
+        "show_only_once": false
+      },
+      "subtitlesStyle": {
+        "enabled": true
+      }
+    }
+  },
+  "smarttv": {
+    "enabled": true,
+    "theming": {
+      "bckgrnd": "https://24ishoppublic.s3-eu-west-1.amazonaws.com/NAB24i/1466767204405.ott-background.png",
+      "logo": "https://24ishoppublic.s3-eu-west-1.amazonaws.com/NAB24i/1466767191658.ott-logo.png",
+      "stylesheets": [
+        "cdn/themes/default/theme.css",
+        "cdn/icons/smartott/icons.css",
+        "cdn/fonts/opensans/font.css"
+      ]
+    },
+    "disableNativeSubtitles": false
+  }
+}
